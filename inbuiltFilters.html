@@ -26,22 +26,48 @@
         <h4>{{name | lowercase}}</h4>
         <h4>{{currentDate}}</h4>
         <h4>{{currentDate | date:'shortDate'}}</h4>
-        <h4>{{currentDate | date:'longDate'}}</h4>
+        <h4>{{currentDate | date:'longDate' | uppercase }}</h4>
         <h4>{{currentDate | date:'shortTime'}}</h4>
         <h4>{{currentDate | date:'yyyy'}}</h4>
     </div>
     Filter: <input type="text" ng-model="filterName"> {{filterName}}
-    <table border=1>
+    <br>
+    {{friends   | limitTo:2:5}}
+    <table border="1">
         <thead>
             <tr>
-                <td>Name</td>
+                <th>Name</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="name in friends | filter:filterName ">
+            <tr ng-repeat="name in friends | filter:filterName | limitTo:5:4">
                 <td>{{name}}</td>
             </tr>
         </tbody>
+    </table>
+    <hr>
+    <h3>JSON PlaceHolder Data   </h3>
+    {{users[0].address.zipcode}}
+    <br>
+    <table border="1">
+            <thead>
+                <tr>
+                    <th ng-click="sortBy('id')">ID</th>
+                    <th ng-click="sortBy('name')">Name</th>
+                    <th ng-click="sortBy('email')">Email</th>
+                    <th ng-click="sortBy('address.geo.lat')">Latitude</th>
+                    <th ng-click="sortBy('address.geo.lng')">Longitude</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="u in users | orderBy:sortByMe ">
+                    <td>{{u.id}}</td>
+                    <td>{{u.name}}</td>
+                    <td>{{u.email}}</td>
+                    <td>{{u.address.geo.lat}}</td>
+                    <td>{{u.address.geo.lng}}</td>
+                </tr>
+            </tbody>
     </table>
 
 
