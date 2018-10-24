@@ -60,10 +60,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="u in users | orderBy:sortByMe ">
+                <tr ng-repeat="u in users | orderBy:sortByMe  ">
                     <td>{{u.id}}</td>
                     <td>{{u.name}}</td>
-                    <td>{{u.email}}</td>
+                    <td>{{u.email  | replaceWithPound}}</td>
                     <td>{{u.address.geo.lat}}</td>
                     <td>{{u.address.geo.lng}}</td>
                 </tr>
@@ -72,5 +72,6 @@
 
 
     <script src="/feature/filter/filterController.js"></script>
+    <script src="/feature/filter/customEmailFilter.js"></script>
 </body>
 </html>
