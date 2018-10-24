@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular JS Inbuilt Filters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myController" >
+    <h1>Angular JS Inbuilt Filters</h1>
+    <ol>
+        <li>currency</li>
+        <li>date</li>
+        <li>filter</li>
+        <li>limitTo</li>
+        <li>lowercase</li>
+        <li>uppercase</li>
+        <li>number</li>
+        <li>orderBy</li>
+    </ol>
+    <div ng-init="score=10;name='Prafful Daga';">
+        <h4>{{score | currency:'INR'}}</h4>
+        <h4>{{score | currency}}</h4>
+        <h4>{{name | uppercase}}</h4>
+        <h4>{{name | lowercase}}</h4>
+        <h4>{{currentDate}}</h4>
+        <h4>{{currentDate | date:'shortDate'}}</h4>
+        <h4>{{currentDate | date:'longDate'}}</h4>
+        <h4>{{currentDate | date:'shortTime'}}</h4>
+        <h4>{{currentDate | date:'yyyy'}}</h4>
+    </div>
+    Filter: <input type="text" ng-model="filterName"> {{filterName}}
+    <table border=1>
+        <thead>
+            <tr>
+                <td>Name</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="name in friends | filter:filterName ">
+                <td>{{name}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script src="/feature/filter/filterController.js"></script>
+</body>
+</html>

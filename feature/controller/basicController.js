@@ -14,6 +14,8 @@ app.controller('myHeaderController',function($scope){
 
     $scope.allTask = ["One", "Two", "Three", "Four"]
 
+    $scope.checkdiscount = true
+
     $scope.addTask = function(){
         $scope.allTask.push($scope.newTask)
         console.log($scope.allTask)
