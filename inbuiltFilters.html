@@ -49,6 +49,7 @@
     <h3>JSON PlaceHolder Data   </h3>
     {{users[0].address.zipcode}}
     <br>
+    Filter: <input type="text" ng-model="userFilter"> {{userFilter}}
     <table border="1">
             <thead>
                 <tr>
@@ -60,7 +61,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="u in users | orderBy:sortByMe  ">
+                <tr ng-repeat="u in users | orderBy:sortByMe | filter:userFilter ">
                     <td>{{u.id}}</td>
                     <td>{{u.name}}</td>
                     <td>{{u.email  | replaceWithPound}}</td>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS Factory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+</head>
+<body ng-app="myapp">
+    <h1>AngularJS Factory</h1>
+    <div  ng-controller="MathsController">
+        <input type="number" ng-model="number1"> 
+        <input type="number" ng-model="number2">
+        <br>
+        <button ng-click="doAdd()">Add</button>{{sum}} <br>
+        <button ng-click="doMultiply()">Multiply</button>{{multiple}} <br>
+        {{factoryMessage}}
+        <br>
+        <hr>
+        <p>These messages are coming from service....</p>
+        {{msg1}} <br>
+        {{msg2}} <br>
+        <button ng-click="addFriend()">Add Friend</button>
+        <br>
+        New Friend: {{friendName}}
+        <hr>
+        Address: {{address}}
+        <hr>
+        Time : {{currentTime | date:'ss'}}
+    </div>
+   
+    <script src="/feature/controller/mathsController.js"> </script>
+    <script src="/feature/factory/customFactory.js"></script>
+    <script src="/feature/service/MessageService.js"></script>
+   
+</body>
+</html>
