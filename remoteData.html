@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS $http</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="remoteDataController">
+    <h1>$http</h1>
+    <button ng-click="callRemoteData()">Call Remote Data</button>
+    <br>
+   
+    <table border="1">
+            <thead>
+                <tr>
+                    <th >Album ID</th>
+                    <th >ID</th>
+                    <th >Title</th>
+                    <th >URL</th>
+                    <th >Thumbnail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="u in users">
+                    <td>{{u.albumId}}</td>
+                    <td>{{u.id}}</td>
+                    <td>{{u.title }}</td>
+                    <td>{{u.url}}</td>
+                    <td><img ng-src={{u.thumbnailUrl}}> </td>
+                </tr>
+            </tbody>
+    </table>
+   <!--  {{users}}  -->
+
+   
+
+    <script src="/feature/controller/remoteDataController.js"></script>
+    <script src="/feature/service/httpService.js"></script>
+</body>
+</html>
