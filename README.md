@@ -1,6 +1,6 @@
 # angularjsoct2018
 
-use json-server tp create fake rest api
+use json-server to create fake rest api
 
 npm install -g json-server
 
