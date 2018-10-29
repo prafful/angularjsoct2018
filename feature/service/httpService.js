@@ -4,7 +4,7 @@ app.service("remoteService", function($http){
     var remote = {}
 
     remote.getRemoteData = function(){
-        return $http.get("http://jsonplaceholder.typicode.com/photos")
+        return $http.get("http://jsonplaceholder.typicode.com/users")
                 .then(successFunction, failureFunction)
 
 

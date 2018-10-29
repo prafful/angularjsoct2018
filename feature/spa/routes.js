@@ -6,8 +6,9 @@ app.config(function($routeProvider){
                                     "templateUrl":'/spatemplate/home.html',
                                     "controller":"homeController"
                                 })
-                    .when("/about",{
-                        "template":"<h1>{{companyname}}: This is about us!</h1>",
+                    .when("/about/:childroute",{
+                        "template":`<h1>{{companyname}}: This is about us!</h1>
+                                    <h3>I am Branch {{childurl}}</h3>`,
                         "controller":"aboutController"
                     })
                     .when("/contact",{
@@ -25,6 +26,7 @@ app.controller("homeController", function($scope){
 
 })
 
-app.controller("aboutController", function($scope){
+app.controller("aboutController", function($scope, $routeParams){
     $scope.companyname = "Cognizant"
+    $scope.childurl=$routeParams.childroute
 })

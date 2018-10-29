@@ -15,20 +15,16 @@
     <table border="1">
             <thead>
                 <tr>
-                    <th >Album ID</th>
                     <th >ID</th>
-                    <th >Title</th>
-                    <th >URL</th>
-                    <th >Thumbnail</th>
+                    <th >Name</th>
+                   
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="u in users">
-                    <td>{{u.albumId}}</td>
                     <td>{{u.id}}</td>
-                    <td>{{u.title }}</td>
-                    <td>{{u.url}}</td>
-                    <td><img ng-src={{u.thumbnailUrl}} width="50"td>
+                    <td>{{u.name}}</td>
+                  
                 </tr>
             </tbody>
     </table>
