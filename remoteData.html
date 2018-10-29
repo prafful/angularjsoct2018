@@ -6,6 +6,7 @@
     <title>AngularJS $http</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+    <script src="https://code.angularjs.org/1.7.5/angular-route.js"></script>
 </head>
 <body ng-app="myapp" ng-controller="remoteDataController">
     <h1>$http</h1>
@@ -24,10 +25,15 @@
                 <tr ng-repeat="u in users">
                     <td>{{u.id}}</td>
                     <td>{{u.name}}</td>
+                    <td><a href="#!{{u.id-1}}"> Details</a>  </td>
                   
                 </tr>
             </tbody>
     </table>
+    <hr>
+    <div ng-view>
+        This is view container for SPA.
+    </div>
    <!--  {{users}}  -->
 
    

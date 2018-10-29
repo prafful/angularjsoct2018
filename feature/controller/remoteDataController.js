@@ -1,6 +1,22 @@
-var app = angular.module("myapp", [])
+var app = angular.module("myapp", ["ngRoute"])
 
-app.controller("remoteDataController", function($scope, remoteService){
+app.config(function($routeProvider){
+
+    $routeProvider.when("/:id",{
+        "template":`Path : {{receivedId}} <br>
+                    Name: {{users[receivedId].name}} <br>
+                    Email: {{users[receivedId].email}} <br>
+                    Latitude: {{users[receivedId].address.geo.lat}} <br>
+                    Latitude: {{users[receivedId].address.geo.lng}} <br>
+                    Website: {{users[receivedId].website}}`,
+        "controller":"remoteDataController"
+    })
+
+})
+
+
+
+app.controller("remoteDataController", function($scope, remoteService, $routeParams){
 
     $scope.callRemoteData = function(){
         $scope.usersData  = remoteService.getRemoteData()
@@ -14,6 +30,7 @@ app.controller("remoteDataController", function($scope, remoteService){
         //console.log($scope.usersData)
     }
 
+    $scope.receivedId = $routeParams.id
 
 
 })
