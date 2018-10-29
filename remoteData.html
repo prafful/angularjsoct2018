@@ -10,6 +10,17 @@
 </head>
 <body ng-app="myapp" ng-controller="remoteDataController">
     <h1>$http</h1>
+    <hr>
+        <form>
+            Name: <input type="text" ng-model="formName" > <br>
+            Email: <input type="email" ng-model="formEmail" > <br>
+            Website: <input type="text" ng-model="formWebsite"> <br>
+            <button ng-click="addUser()">Add</button>
+        </form>
+
+    <hr>
+
+
     <button ng-click="callRemoteData()">Call Remote Data</button>
     <br>
    

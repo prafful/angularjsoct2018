@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "prafful",
+      "email": "prafful@gmail.com",
+      "website": "www.prafful.com"
+    },
+    {
+      "id": 2,
+      "name": "manoj",
+      "email": "manoj@gmail.com",
+      "website": "www.manoj.com"
+    },
+    {
+      "id": 3,
+      "name": "adi",
+      "email": "adi@gmail.com",
+      "website": "www.adi.com"
+    },
+    {
+      "name": "ola",
+      "email": "ola@gmail.com",
+      "website": "www.ola.com",
+      "id": 4
+    }
+  ]
+}

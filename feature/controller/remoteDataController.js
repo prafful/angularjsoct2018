@@ -32,5 +32,16 @@ app.controller("remoteDataController", function($scope, remoteService, $routePar
 
     $scope.receivedId = $routeParams.id
 
+    $scope.addUser = function(){
+        console.log("I am inside add user...." + $scope.formName + ", " + $scope.formEmail + ", " + $scope.formWebsite)
+        $scope.usersData  = remoteService.postRemoteData($scope.formName, $scope.formEmail, $scope.formWebsite )
+        //$scope.usersData contains the promise
+        $scope.usersData.then( function(data){
+            console.log("Inside Update Success")
+            console.log(data)
+            $scope.users = data
+        })
+    }   
+
 
 })
