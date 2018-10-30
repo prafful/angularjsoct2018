@@ -40,6 +40,23 @@ app.service("remoteService", function($http){
                 })            
     }
 
+    remote.get5000Records = function(){
+        return $http.get("http://jsonplaceholder.typicode.com/photos")
+        .then(successFunction, failureFunction)
+
+        function successFunction(response){
+            console.log("Service 5000 Success")
+            console.log(response.data)
+            return response.data
+        }
+
+        function failureFunction(response){
+            console.log("Service 5000 Failure")
+            console.log(response)
+            return response.status
+        }
+    }
+
     return remote;
 
 

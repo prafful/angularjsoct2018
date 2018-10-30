@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS Pagination</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="PaginationController">
+        <button ng-click="get5000()">Get 5000</button>
+        <table border="1">
+                <thead>
+                    <tr>
+                        <th >Album ID</th>
+                        <th >ID</th>
+                        <th>Title</th>
+                        
+                        <th>Thumbnail</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="pic in photos | itemsPerPage: 10">
+                        <td>{{pic.albumId}}</td>
+                        <td>{{pic.id}}</td>
+                        <td>{{pic.title}}</td>
+                        <td><img ng-src="{{pic.thumbnailUrl}}" width="75"></td>
+                      
+                    </tr>
+                </tbody>
+        </table>
+        {{test}}
+
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+    <script src="pagination/pagination-directive.js"></script>
+    <script src="/feature/controller/paginationController.js"></script>
+    <script src="/feature/service/httpService.js"></script>
+
+</body>
+
+</html>
