@@ -1,4 +1,4 @@
-var app = angular.module("myapp",["ngRoute"])
+var app = angular.module("myapp",["ngRoute", "ngAnimate"])
 
 app.config(function($routeProvider){
 
@@ -6,6 +6,10 @@ app.config(function($routeProvider){
                                     "templateUrl":'/spatemplate/home.html',
                                     "controller":"homeController"
                                 })
+                     .when("/about",{
+                         template:"<h1>{{companyname}}: This is about us!</h1>",
+                         "controller":"aboutController"
+                     })               
                     .when("/about/:childroute",{
                         "template":`<h1>{{companyname}}: This is about us!</h1>
                                     <h3>I am Branch {{childurl}}</h3>`,

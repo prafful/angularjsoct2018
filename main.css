@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+}
+
+.animateNow {
+    background-color: red;
+  }
+
+  p {
+    width: 425px;
+    height: 30px;
+    border-radius: 5px;
+    background: cornflowerblue;
+    text-align: center;
+    margin: 5px auto;
+    color: white;
+  }
+  
+  
+  .animateNow.ng-enter {
+    transition:all ease-in 3s;
+    height: 0px;
+  }
+  
+  .animateNow.ng-enter.ng-enter-active {
+    height: 30px;
+  }

@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
     <script src="https://code.angularjs.org/1.7.5/angular-route.js"></script>
-
+    <script src="https://code.angularjs.org/1.7.5/angular-animate.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="myapp">
    <h3>SPA in Angualar JS</h3> 
@@ -16,7 +17,9 @@
    <a href="#!about">About</a>
    <a href="#!contact">Contact</a>
 
-   <div ng-view></div>
+   <div class="page-container">
+             <div  class="page-view" ng-view></div>
+   </div>
 
    <script src="/feature/spa/routes.js"></script>
 </body>

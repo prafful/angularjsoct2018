@@ -1,0 +1,29 @@
+.page-container{
+    position: relative;
+    margin: 10px 20px;
+}
+
+.page-view{
+    padding: 10px;
+}
+
+.page-view.ng-animate{
+    transition: all ease 0.5s;
+    position: absolute;
+}
+
+.page-view.ng-enter{
+    top:200px;
+    opacity: 0;
+}
+
+.page-view.ng-leave,
+.page-view.ng-enter.ng-enter-active{
+    top:0;
+    opacity: 1;
+}
+
+.page-view.ng-leave.ng-leave-active{
+    top:-200px;
+    opacity: 0;
+}

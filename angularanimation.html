@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS Animation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+    <script src="https://code.angularjs.org/1.7.5/angular-animate.js"></script>
+</head>
+<body ng-app="myApp">
+
+    <button ng-click="doAnimate=true">Show Red</button>
+    <button ng-click="doAnimate=false">Hide Red</button>
+    <br>
+    <p class="animateNow" ng-if="doAnimate">I will be animated!!!!</p>
+    <p></p>
+
+    <p class="animateNow" ng-if="doAnimate">I will be animated!!!!</p>
+    <p></p>
+
+    <p class="animateNow" ng-if="doAnimate">I will be animated!!!!</p>
+    <p></p>
+
+    <p class="animateNow" ng-if="doAnimate">I will be animated!!!!</p>
+    <p></p>
+
+    <script src="/feature/animation/animationInit.js"></script>
+</body>
+</html>
