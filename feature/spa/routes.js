@@ -34,3 +34,5 @@ app.controller("aboutController", function($scope, $routeParams){
     $scope.companyname = "Cognizant"
     $scope.childurl=$routeParams.childroute
 })
+
+
